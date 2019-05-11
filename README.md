@@ -29,7 +29,7 @@ It works platform independent on the JVM.
 ## What it does   
 
 The program will connect to the port, wait for the bootloader to respond and will then initiate the block-wise transfer of the given kernel image.
-After the full transfer the data is CRC32-checked. Finally the bootloader will execute your kernel code and you can connect to the Pi using a serial console.  
+After the full transfer the data is CRC32-checked. Finally, the bootloader will execute your kernel code and you can connect to the Pi using a serial console.  
 
 A successful output looks like this:
 
@@ -46,8 +46,10 @@ A successful output looks like this:
 ```
 
 This setup allows for a workflow like this:
-1. Build kernel image
 2. Reboot Raspi (by cutting power or better via a command in your Raspi-OS cli)
+1. Build kernel image
 3. Run c3r3s4j
 4. Open serial console
-5. repeat
+5. Repeat
+
+Steps 2.-4. can even be combined to a single command, making everything even more comfortable.
