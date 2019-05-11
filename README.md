@@ -46,8 +46,9 @@ A successful output looks like this:
 ```
 
 This setup allows for a workflow like this:
-2. Reboot Raspi (by cutting power or better via a command in your Raspi-OS cli)
-1. Build kernel image
+
+1. Reboot Raspi (by cutting power or better via a command in your Raspi-OS cli)
+2. Build kernel image
 3. Run c3r3s4j
 4. Open serial console
 5. Repeat
