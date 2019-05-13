@@ -1,5 +1,5 @@
 # c3r3s4j
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 This is a Kotlin (JVM) implementation of a command-line serial bootloader server for the Raspberry Pi 3 using the c3r3s bootloader.
 
@@ -14,8 +14,20 @@ It works platform independent on the JVM.
 
 ## How to use
 
-1. Install the c3r3s bootloader on your Raspberry's SD card like described [here](https://github.com/robey/c3r3s#how-to-use)
-1. Download the latest executable .jar-file from `releases`
+1. Build an SD card with the [basic Raspberry Pi 3 bootloader](https://github.com/raspberrypi/firmware) or just install Raspbian.
+2. Erase any `kernel.img` or `kernel7.img` and add the [c3r3s `kernel8.img`](https://github.com/robey/c3r3s/tree/master/boot) file.
+3. The `config.txt` file should have these lines in order to turn on the LED and the serial port:
+
+   ```
+   enable_uart=1
+   dtoverlay=pi3-miniuart-bt
+   dtoverlay=pi3-act-led
+   ```
+   
+   Also don't include `kernel_old=1` or similar flags.
+   
+1. Let the Raspi boot, it should blink its red LED every 500ms.
+1. Download the latest executable `c3r3s4j` .jar-file from `releases`
 2. On Linux, run:
 
    ```
